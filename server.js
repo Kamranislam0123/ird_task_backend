@@ -6,7 +6,14 @@ const app = express();
 const PORT = 5000;
 
 // Enable CORS for frontend access
-app.use(cors());
+app.use(cors(
+{
+  origin: "[https://ird-task-edx1-gk3djcgbz-md-kamranul-islams-projects.vercel.app/]",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
+}
+));
 app.use(express.json());
 
 // Connect to SQLite database
